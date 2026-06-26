@@ -1,10 +1,25 @@
+import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 
 function MenuItem({ item }) {
   const { addToCart } = useCart()
+  const [imgLoaded, setImgLoaded] = useState(false)
+  const [imgError, setImgError] = useState(false)
 
   return (
     <div className="menu-item">
+      {item.image && !imgError && (
+        <div className="menu-item-img-wrap">
+          <img 
+            src={item.image} 
+            alt={item.name}
+            className={`menu-item-img ${imgLoaded ? 'loaded' : ''}`}
+            onLoad={() => setImgLoaded(true)}
+            onError={() => setImgError(true)}
+            loading="lazy"
+          />
+        </div>
+      )}
       <div className="menu-item-content">
         <div className="menu-item-header">
           <h3 className="menu-item-name">
@@ -25,21 +40,26 @@ function MenuItem({ item }) {
       </button>
 
       <style>{`
-        .menu-item { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 20px; border-radius: 12px; background: var(--color-card); border: 1px solid var(--color-border); transition: all 0.2s; }
+        .menu-item { display: flex; align-items: flex-start; gap: 16px; padding: 16px; border-radius: 12px; background: var(--color-card); border: 1px solid var(--color-border); transition: all 0.2s; }
         .menu-item:hover { background: var(--color-card-hover); border-color: var(--color-accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-        .menu-item-content { flex: 1; }
-        .menu-item-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-        .menu-item-name { font-family: var(--font-display); font-size: 16px; font-weight: 500; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .menu-item-img-wrap { width: 80px; height: 80px; border-radius: 10px; overflow: hidden; flex-shrink: 0; background: var(--color-secondary); }
+        .menu-item-img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s ease; }
+        .menu-item-img.loaded { opacity: 1; }
+        .menu-item-content { flex: 1; min-width: 0; }
+        .menu-item-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+        .menu-item-name { font-family: var(--font-display); font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
         .tag { font-family: var(--font-body); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
         .tag-popular { background: rgba(201, 169, 110, 0.15); color: var(--color-accent); border: 1px solid rgba(201, 169, 110, 0.3); }
         .tag-signature { background: rgba(231, 76, 60, 0.1); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.3); }
         .tag-veg { background: rgba(76, 175, 80, 0.1); color: #4caf50; border: 1px solid rgba(76, 175, 80, 0.3); width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border-radius: 50%; }
-        .menu-item-price { font-size: 16px; font-weight: 700; color: var(--color-accent); white-space: nowrap; }
-        .menu-item-desc { font-size: 13px; color: var(--color-text-muted); line-height: 1.5; }
+        .menu-item-price { font-size: 15px; font-weight: 700; color: var(--color-accent); white-space: nowrap; }
+        .menu-item-desc { font-size: 12px; color: var(--color-text-muted); line-height: 1.5; }
         .add-to-cart-btn { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: transparent; border: 1.5px solid var(--color-accent); color: var(--color-accent); border-radius: 8px; font-size: 13px; font-weight: 600; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; align-self: center; }
         .add-to-cart-btn:hover { background: var(--color-accent); color: var(--color-primary); transform: scale(1.05); }
         @media (max-width: 480px) {
-          .menu-item { flex-direction: column; }
+          .menu-item { flex-wrap: wrap; }
+          .menu-item-img-wrap { width: 100%; height: 160px; border-radius: 8px; }
+          .menu-item-content { width: 100%; }
           .add-to-cart-btn { width: 100%; justify-content: center; }
         }
       `}</style>
