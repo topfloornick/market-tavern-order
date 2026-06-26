@@ -9,7 +9,7 @@ export const menuData = {
         description: "Farm eggs, smoked paprika, chives, crispy bacon bits",
         price: 12,
         tags: ["popular"],
-        image: "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=400&h=300&fit=crop"
+        image: "/deviled-eggs.jpg"
       },
       {
         id: "s2",
