@@ -6,7 +6,7 @@ function Home() {
       <section className="hero">
         <div className="hero-bg" />
         <div className="hero-content container">
-          <span className="hero-badge">Since 2013 &middot; Stockton, CA</span>
+          <span className="hero-badge">Since 2012 &middot; Stockton, CA</span>
           <h1 className="hero-title">Market Tavern</h1>
           <p className="hero-subtitle">New American Cuisine &middot; Wood-Fired &middot; Farm Fresh</p>
           <p className="hero-desc">
@@ -20,7 +20,7 @@ function Home() {
           <div className="hero-stats">
             <div className="stat"><span className="stat-number">4.0&#9733;</span><span className="stat-label">Yelp &middot; 1,700+ reviews</span></div>
             <div className="stat"><span className="stat-number">4.6&#9733;</span><span className="stat-label">DoorDash &middot; 4K+ ratings</span></div>
-            <div className="stat"><span className="stat-number">11+</span><span className="stat-label">Years Serving Stockton</span></div>
+            <div className="stat"><span className="stat-number">13+</span><span className="stat-label">Years Serving Stockton</span></div>
           </div>
         </div>
       </section>

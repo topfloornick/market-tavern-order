@@ -9,7 +9,7 @@ export const menuData = {
         description: "Farm eggs, smoked paprika, chives, crispy bacon bits",
         price: 12,
         tags: ["popular"],
-        image: "https://images.unsplash.com/photo-1594470117722-de4b9a02ebed?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=400&h=300&fit=crop"
       },
       {
         id: "s2",
@@ -380,7 +380,7 @@ export const menuData = {
 export const restaurantInfo = {
   name: "Market Tavern",
   tagline: "New American Cuisine - Wood-Fired - Farm Fresh",
-  established: 2013,
+  established: 2012,
   address: "236 Lincoln Center",
   city: "Stockton",
   state: "CA",

@@ -13,11 +13,7 @@ function Header() {
     <header className="header">
       <div className="header-inner container">
         <Link to="/" className="logo">
-          <span className="logo-icon">MT</span>
-          <div className="logo-text">
-            <span className="logo-name">Market Tavern</span>
-            <span className="logo-sub">Est. 2013</span>
-          </div>
+          <img src="/logo.png" alt="Market Tavern" className="logo-img" />
         </Link>
 
         <nav className={`nav ${mobileMenuOpen ? 'nav-open' : ''}`}>
@@ -43,11 +39,8 @@ function Header() {
       <style>{`
         .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 15, 26, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); height: var(--header-height); }
         .header-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--color-primary); }
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-name { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-text); }
-        .logo-sub { font-size: 11px; color: var(--color-accent); letter-spacing: 1px; text-transform: uppercase; }
+        .logo { display: flex; align-items: center; }
+        .logo-img { height: 56px; width: auto; object-fit: contain; filter: brightness(1.1); }
         .nav { display: flex; align-items: center; gap: 8px; }
         .nav-link { padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--color-text-muted); transition: all 0.2s; }
         .nav-link:hover, .nav-link.active { color: var(--color-text); background: var(--color-card); }

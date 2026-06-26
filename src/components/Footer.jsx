@@ -8,11 +8,7 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logo">
-              <span className="logo-icon">MT</span>
-              <div>
-                <h3>Market Tavern</h3>
-                <p>New American Cuisine</p>
-              </div>
+              <img src="/logo.png" alt="Market Tavern" className="footer-logo-img" />
             </div>
             <p className="footer-desc">
               Since 2013, serving farm-fresh ingredients with a passion for quality. 
@@ -47,10 +43,8 @@ function Footer() {
       <style>{`
         .footer { background: var(--color-primary); border-top: 1px solid var(--color-border); padding: 60px 0 30px; margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .footer-logo .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--color-primary); }
-        .footer-logo h3 { font-family: var(--font-display); font-size: 18px; }
-        .footer-logo p { font-size: 12px; color: var(--color-accent); }
+        .footer-logo { margin-bottom: 16px; }
+        .footer-logo-img { height: 60px; width: auto; object-fit: contain; filter: brightness(1.1); }
         .footer-desc { font-size: 14px; color: var(--color-text-muted); line-height: 1.7; }
         .footer-links h4, .footer-hours h4, .footer-contact h4 { font-family: var(--font-display); font-size: 16px; margin-bottom: 16px; color: var(--color-text); }
         .footer-links a { display: block; color: var(--color-text-muted); font-size: 14px; padding: 6px 0; transition: color 0.2s; }
